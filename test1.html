@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/js/template-web.js"></script>
+</head>
+<body>
+<script type="text/template" defer id="tpl">
+    111111111111111111
+    {{age}}
+    {{each target}}
+    <li class="listItem">
+        <span>$index</span>
+        <span>$value.musicTime</span>
+        <span>$value.singer</span>
+        <span>$value.totalTime</span>
+    </li>
+    {{/each}}
+</script>
+<script>
+    var listInfo = template('tpl', {
+        age:1000,
+        target:[
+            {"singer": "高东昇", "musicName": "我相信", "totalTime": "4:10"},
+            {"singer": "张三", "musicName": "青花瓷", "totalTime": "2:30"},
+            {"singer": "李四", "musicName": "月亮之上", "totalTime": "4:30"},
+            {"singer": "高东昇", "musicName": "我相信", "totalTime": "2:50"},
+            {"singer": "赵六", "musicName": "梦想的翅膀", "totalTime": "1:30"},
+            {"singer": "高东昇", "musicName": "我相信", "totalTime": "4:30"},
+            {"singer": "王五", "musicName": "平凡之路", "totalTime": "5:30"},
+        ]
+    });
+    console.log(listInfo)
+</script>
+</body>
+</html>

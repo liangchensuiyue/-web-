@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>良辰-专属音乐</title>
+    <link rel="stylesheet" href="/css/index.css"/>
+    <link rel="stylesheet" href="/css/base.css"/>
+    <script type="text/javascript" src="/js/jquery.1.12.4.js"></script>
+    <script type="text/javascript" src="/js/template-web.js"></script>
+</head>
+<body>
+<section class="nav">
+    <span class="link">关于我们</span>
+    <span class="link">网站说明</span>
+    <span class="link">投诉举报</span>
+    <span class="link">加入我们</span>
+</section>
+<section class="search">
+    <div class="input">
+        <input type="text" name="key" placeholder="输入关键字,查找"/>
+        <button class="find">Search</button>
+    </div>
+</section>
+<section class="musicList">
+    <div class="listItem listHead">
+        <span>序号</span>
+        <span>歌曲</span>
+        <span>歌手</span>
+        <span>时长</span>
+    </div>
+    <ul class="list">
+    </ul>
+</section>
+<section class="displayDetail">
+
+</section>
+<audio id="audio" >
+    <source src="https://sz-sycdn.kuwo.cn/e7cbbd678db76c5d008d16f9e11a2d16/5e25b2bc/resource/n1/68/38/37304574.mp3" />
+    <!--    <embed height="100" width="100" src="https://sz-sycdn.kuwo.cn/d83f318e7774b65fef0ced5d89f3ee0b/5e255fdb/resource/n1/68/38/37304574.mp3"/>-->
+    额，尴尬...
+</audio>
+<script type="text/template" id="tpl1">
+    {{each target}}
+    <li class="listItem">
+        <span>{{$index}}</span>
+        <span>{{$value.musicName}}</span>
+        <span>{{$value.singer}}</span>
+        <span>{{$value.totalTime}}</span>
+    </li>
+    {{/each}}
+</script>
+<script type="text/template" id="tpl2">
+    <div class="bg1">
+
+    </div>
+    <div class="bodyBox">
+        <span class="cancel">&times;</span>
+
+        <div class="bg2">
+
+        </div>
+        <div class="left">
+            <div class="img">
+                <img src="{{info.musicImg}}" alt="jpeg"/>
+            </div>
+            <div class="info">
+               <span>
+                   <span>歌曲名:</span><span>{{info.musicName}}</span>
+               </span>
+                <span>
+                   <span>歌手:</span><span>{{info.singer}}</span>
+               </span>
+            </div>
+        </div>
+        <div class="right">
+            <div class="lyric">
+            </div>
+        </div>
+        <div class="footer">
+            <div class="menubar">
+                <span class="prev"></span>
+                <span class="play"></span>
+                <span class="next"></span>
+            </div>
+            <span class="startTime">00:00</span>
+            <div class="progressbar">
+                <div class="innerbar">
+
+                </div>
+                <div class="round">
+
+                </div>
+            </div>
+            <span>{{info.totalTime}}</span>
+        </div>
+    </div>
+</script>
+<script type="text/javascript" src="./js/index.js"></script>
+</body>
+</html>
